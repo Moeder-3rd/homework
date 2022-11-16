@@ -1,0 +1,70 @@
+.demo{
+    width:1200px;
+    height:600px;
+    margin:0px auto;
+    overflow: hidden;
+}
+.demo1{
+    width:3600px;
+    height:600px;
+    margin:0px auto;
+    animation:text 20s infinite  linear;
+    font-size:0px;
+}
+div1 {  
+    background: url("1.jpg") no-repeat;
+    height:100%;
+    width:1200px;
+    overflow: hidden;
+    background-size:cover;
+    display: inline-block;
+}
+div2 {  
+    background: url("2.jpg") no-repeat;
+    height:100%;
+    width:1200px;
+    overflow: hidden;
+    background-size:cover;
+    display: inline-block;
+}
+div3 {  
+    background: url("3.jpg") no-repeat;
+    height:100%;
+    width:1200px;
+    overflow: hidden;
+    background-size:cover;
+    display: inline-block;
+}
+.demo1 div1{
+    width:1200px;
+    height:600px;
+    float:left;
+}
+.demo1 div2{
+    width:1200px;
+    height:600px;
+    margin-top: 0px auto
+}
+.demo1 div3{
+    width:1200px;
+    height:600px;
+    float:right ;
+}
+@keyframes text {         
+    0%,10%{
+        margin-left:0px;
+    }
+    20%,30%{
+        margin-left:-1200px;
+    }
+    40%,50%{
+        margin-left:-2400px;
+    }
+    60%,70%{
+        margin-left:-1200px;
+    }
+    80%,90%{
+        margin-left:0px;
+    }
+}
+
