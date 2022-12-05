@@ -1,0 +1,90 @@
+div.background {   
+    width: 500px;
+    height: 200px;
+    background-color: pink;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin: 0 auto;
+    margin-top: 200px;
+    text-align: center;
+}
+textarea.title {    
+    margin: 0 auto;
+    margin-top: 50px;
+    background-color: pink;
+    resize: none;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    height: 30px;
+}
+textarea.list { 
+    margin: auto;
+    width: 300px;
+    height: 40px;
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 20px;
+    resize: none;
+    border: none;
+    outline: none;
+    vertical-align: middle;
+}
+button.add { 
+        margin: auto;
+        width: 100px;
+        height: 40px;
+        background-color: red;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        font-weight: bolder;
+        text-align: center;
+        font-size: large;
+        margin-top: 0px;
+        vertical-align: middle;
+        cursor: pointer;
+}
+li  {   
+    width: 500px;
+    height: 40px;
+    background-color: rgb(245, 245, 245);
+    text-align: left;
+    /* vertical-align: middle; */
+}
+ol {    
+    margin: auto;
+    margin-top: 65px;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: -40px;
+}
+.delete { 
+    float: right;
+    outline: none;
+    border: none;
+    background-color: rgb(245, 245, 245);
+    font-size: 25px;
+    cursor: pointer;
+    margin:auto
+    
+}
+.text {  
+    text-decoration: line-through;
+    /* pointer-events: none; */
+}
+.finish { 
+    outline: none;
+    border: none;
+    background-color: rgb(245, 245, 245);
+    font-size: 15px;
+}
+div.form {  
+    width: 500px;
+    height: 40px;
+    background-color: rgb(245, 245, 245);
+    text-align: left;
+}
