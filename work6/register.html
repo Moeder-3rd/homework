@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./class.css">
+</head>
+<body> 
+
+<div class = "register">
+    <div class = "box">    
+        <span>昵称：</span>
+        <input type="text" class="reg">
+        <button>注册</button>
+    </div>
+    <div class = "box">   
+        <span>昵称：</span>
+        <input type="text" class="log">
+        <button>登录</button>
+    </div>
+</div>
+<div class = "ctx">    
+</div>
+<div class = box>   
+    <input type="text" class="sign">
+    <button>发送</button>
+</div>
+    <!-- <script type="text/javascript" src="./script.js">   </script> -->
+    <script>    
+    let btn = document.querySelectorAll('button')
+    let reg = document.querySelector('.reg')
+    let log = document.querySelector('.log')
+    let sign = document.querySelector('.sign')
+    let ctx = document.querySelector('.ctx')
+fetch("http://runninglili.club:8080/getAllMessages",{   
+    method:"GET"
+})
+    .then((response) => response.json())
+        .then((response) => {
+                // console.log(response)
+                let names = []
+                let words = []
+                let img =  []
+                for(i=0;i<=response.length;i++){    
+                        names[i]=response[i]["username"]
+                        words[i]=response[i]['words']
+                        img[i]= response[i]['avatar']
+                        if (i % 2 == 0){    
+                            ctx.innerHTML =
+						`<div class = "leftmes">${ctx.innerHTML}<img src="${img[i]}">${names[i]+":"}<p>${words[i]}</p><br></div>`;
+                        }else { 
+                            ctx.innerHTML =
+                            `<div class = "rightmes">${ctx.innerHTML}<p>${words[i]}</p>${":"+names[i]}<img src="${img[i]}"><br></div>`;
+                        }
+                }
+            })
+    btn[0].onclick = function() {   
+        fetch("http://runninglili.club:8080/register",{ 
+            method:'POST',
+            body: `username=${reg.value}`,
+            headers:{   
+                'Content-Type':'application/x-www-form-urlencoded'
+            }
+        })
+        .then((response) => response.json())
+    }
+    btn[1].onclick = function() {   
+        fetch("http://runninglili.club:8080/login",{    
+            method:'POST',
+            body: `username=${log.value}`,
+            headers:{   
+                'Content-Type':'application/x-www-form-urlencoded'
+            }
+
+        })
+        .then((response) => response.json())
+    }
+
+    btn[2].onclick = function(){    
+        fetch("http://runninglili.club:8080/sendMes",{  
+            method: "POST",
+            body: `words=${sign.value}`,
+            headers:{   
+                Authorization:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsiaWQiOiJpbml0IiwiYXZhdGFyIjoiaW5pdCIsInVzZXJuYW1lIjoiaW5pdCJ9LCJzdGF0ZXMiOnsiZGVmYXVsdCI6e30sImluaXQiOnsiaWQiOnRydWUsInVzZXJuYW1lIjp0cnVlLCJhdmF0YXIiOnRydWV9fX0sInNraXBJZCI6dHJ1ZSwic2VsZWN0ZWQiOnsiX2lkIjowLCJfX3YiOjB9LCJleGNsdWRlIjp0cnVlfSwiJGlzTmV3IjpmYWxzZSwiX2RvYyI6eyJpZCI6IkVrVXNPWlZnbGlySUV1MGhXdmZySiIsInVzZXJuYW1lIjoiTW9lZGVyIiwiYXZhdGFyIjoiaHR0cDovL3J1bm5pbmdsaWxpLmNsdWIvNS5qcGcifSwiaWF0IjoxNjcxNDUxNDcwLCJleHAiOjE2NzQwNDM0NzB9.BOXGLVOiRIX9Ob-O54WsPpXfvCtHMBzp287MA2R4BcU' ,
+                'Content-Type':'application/x-www-form-urlencoded'
+            }
+        })
+        .then((response) => response.json())
+    }
+    
+
+    </script>
+</body>
+</html>
