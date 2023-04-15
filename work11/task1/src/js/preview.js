@@ -1,0 +1,1 @@
+import "../css/main/main-passage/preview.css"

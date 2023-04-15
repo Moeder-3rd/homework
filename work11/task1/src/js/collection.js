@@ -1,0 +1,1 @@
+import "../css/main/main-collection/class-collection.css";
